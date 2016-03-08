@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     var counter = 0
     var isPaused = false
     var isRunning = false
+    var toPass:Int!
+    
     @IBOutlet var voiceEnableLabel: UILabel!
     @IBOutlet var countingLabel: UILabel!
-    @IBOutlet var timeInputField: UITextField!
     @IBOutlet var voiceSwitch: UISwitch!
     
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
                 if num != nil && num > 0 && num < Int(INT_MAX) {
                     counter = num!
                     countingLabel.text = formatTime(counter) as String
+                    countingLabel.sizeToFit()
                     timer.invalidate()
                     timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
                     isRunning = true
@@ -70,6 +72,7 @@ class ViewController: UIViewController {
             timer.invalidate()
         } else {
             countingLabel.text = formatTime(--counter) as String
+            countingLabel.sizeToFit()
             isRunning = true
         }
         if voiceSwitch.on {
@@ -98,13 +101,12 @@ class ViewController: UIViewController {
         }
     }
     func formatTime(interval:Int) -> NSString {
-    
-    let time = interval
-    let seconds = time % 60
-    let minutes = (time / 60) % 60
-    let hours = (time / 3600)
+        let time = interval
+        let seconds = time % 60
+        let minutes = (time / 60) % 60
+        let hours = (time / 3600)
 
-    return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
+        return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
     }
 }
 

@@ -11,6 +11,7 @@
 		063E2E131C5C240300A41FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E2E111C5C240300A41FD4 /* Main.storyboard */; };
 		063E2E151C5C240300A41FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063E2E141C5C240300A41FD4 /* Assets.xcassets */; };
 		063E2E181C5C240300A41FD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E2E161C5C240300A41FD4 /* LaunchScreen.storyboard */; };
+		0648077D1C8F4DE90018C8EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648077C1C8F4DE90018C8EC /* HomeViewController.swift */; };
 		066373F81C85FD96009A2144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066373F71C85FD96009A2144 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		063E2E141C5C240300A41FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		063E2E171C5C240300A41FD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		063E2E191C5C240300A41FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0648077C1C8F4DE90018C8EC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		066373F71C85FD96009A2144 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 			children = (
 				066373F71C85FD96009A2144 /* AppDelegate.swift */,
 				063E2E0F1C5C240300A41FD4 /* ViewController.swift */,
+				0648077C1C8F4DE90018C8EC /* HomeViewController.swift */,
 				063E2E111C5C240300A41FD4 /* Main.storyboard */,
 				063E2E141C5C240300A41FD4 /* Assets.xcassets */,
 				063E2E161C5C240300A41FD4 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				066373F81C85FD96009A2144 /* AppDelegate.swift in Sources */,
 				063E2E101C5C240300A41FD4 /* ViewController.swift in Sources */,
+				0648077D1C8F4DE90018C8EC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +258,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -267,7 +271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
