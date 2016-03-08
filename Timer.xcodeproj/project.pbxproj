@@ -12,7 +12,6 @@
 		063E2E151C5C240300A41FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063E2E141C5C240300A41FD4 /* Assets.xcassets */; };
 		063E2E181C5C240300A41FD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E2E161C5C240300A41FD4 /* LaunchScreen.storyboard */; };
 		066373F81C85FD96009A2144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066373F71C85FD96009A2144 /* AppDelegate.swift */; };
-		066373FC1C861613009A2144 /* SettingsControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066373FB1C861613009A2144 /* SettingsControllerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		063E2E171C5C240300A41FD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		063E2E191C5C240300A41FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		066373F71C85FD96009A2144 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		066373FB1C861613009A2144 /* SettingsControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControllerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 				063E2E141C5C240300A41FD4 /* Assets.xcassets */,
 				063E2E161C5C240300A41FD4 /* LaunchScreen.storyboard */,
 				063E2E191C5C240300A41FD4 /* Info.plist */,
-				066373FB1C861613009A2144 /* SettingsControllerTableViewController.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -140,7 +137,6 @@
 			files = (
 				066373F81C85FD96009A2144 /* AppDelegate.swift in Sources */,
 				063E2E101C5C240300A41FD4 /* ViewController.swift in Sources */,
-				066373FC1C861613009A2144 /* SettingsControllerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Timer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.Timer;
@@ -265,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Timer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.Timer;
