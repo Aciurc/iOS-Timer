@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var counter = 0
     var isPaused = false
     var isRunning = false
-    var toPass:Int!
+    var toPass:String!
     
     @IBOutlet var voiceEnableLabel: UILabel!
     @IBOutlet var countingLabel: UILabel!
@@ -24,6 +24,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        counter = Int(toPass!)!
+        countingLabel.text = formatTime(counter) as String
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,23 +36,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startButton(sender: AnyObject) {
-        if isRunning == false {
+        if isRunning == false && counter > 0 {
             if isPaused {
                 timer.invalidate()
                 timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
                 isRunning = true
             } else {
-                let num = Int(timeInputField.text!)
-                if num != nil && num > 0 && num < Int(INT_MAX) {
-                    counter = num!
-                    countingLabel.text = formatTime(counter) as String
-                    countingLabel.sizeToFit()
-                    timer.invalidate()
-                    timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
-                    isRunning = true
-                } else {
-                    countingLabel.text = "Invalid Number"
-                }
+                let num = Int(toPass!)
+                counter = num!
+                countingLabel.text = formatTime(counter) as String
+                countingLabel.sizeToFit()
+                timer.invalidate()
+                timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+                isRunning = true
             }
         }
     }
@@ -75,23 +75,20 @@ class ViewController: UIViewController {
             countingLabel.sizeToFit()
             isRunning = true
         }
-        if voiceSwitch.on {
-            var utterance: AVSpeechUtterance
         
-            if counter >= 1 {
-                if counter <= 10 {
-                    utterance = AVSpeechUtterance(string: String(counter))
-                } else {
-                    utterance = AVSpeechUtterance(string: "")
-                }
-            } else {
-                utterance = AVSpeechUtterance(string: "Ding ding ding ding ding. Your timer is done")
+        var utterance: AVSpeechUtterance
+        utterance = AVSpeechUtterance(string: "")
+        if counter >= 1 {
+            if counter <= 10 && voiceSwitch.on {
+                utterance = AVSpeechUtterance(string: String(counter))
             }
-        
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speakUtterance(utterance)
+        } else {
+            utterance = AVSpeechUtterance(string: "Ding ding ding ding ding. Your timer is done")
         }
+    
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speakUtterance(utterance)
     }
     @IBAction func voiceEnabled() {
         if voiceSwitch.on {
