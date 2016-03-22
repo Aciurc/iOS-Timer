@@ -17,12 +17,12 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        timeTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        timeTextField.delegate = self
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
